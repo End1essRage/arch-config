@@ -26,6 +26,6 @@ deploy_config ".config/hypr" "$HOME/.config/"
 deploy_config ".config/waybar" "$HOME/.config/"
 deploy_config ".config/kitty" "$HOME/.config/"
 deploy_config ".config/rofi" "$HOME/.config/"
-deploy_config ".zshrc" "$HOME/"
+deploy_config ".zshrc" "$HOME/.zshrc"
 
 echo "Deployment complete! Backup saved to $BACKUP_DIR"
