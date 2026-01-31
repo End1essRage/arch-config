@@ -1,0 +1,113 @@
+{
+ "position": "top",
+    "margin-top": 5,
+    "margin-left": 20,
+    "margin-right": 20,
+    "height": 36,  
+    "spacing": 8,
+    "modules-left": [
+      "custom/firefox",
+      "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "hyprland/language",
+        "pulseaudio",
+        "cpu",
+        "memory",
+        "temperature",
+        "battery",
+        "clock",
+        "custom/exit"
+    ],
+    "custom/firefox": {
+      "format": "󰈹",
+      "tooltip": "Firefox",
+      "on-click": "bash -c 'if pgrep -x \"firefox\" > /dev/null; then hyprctl dispatch focuswindow \"firefox\"; else firefox & disown; fi'",
+      "on-click-middle": "firefox --private-window & disown",
+      "on-click-right": "pkill -f firefox"
+    },
+    "hyprland/window": {
+      "format": "{}",
+      "max-length": 35,
+      "rewrite": {
+        "": "Hyprland"
+    },
+    "separate-outputs": true
+    },
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "on-click": "activate",
+      "format-icons": {
+        "active": " "
+      },
+      "sort-by-number": true,
+      "persistent-workspaces": {
+        "*": 4,
+        "HDMI-A-1": 3
+      }
+    },
+    "clock": {
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+      "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+      "format": " {usage}%",
+      "tooltip": false
+    },
+    "memory": {
+      "format": "{}% "
+    },
+    "temperature": {
+      "critical-threshold": 80,
+      "format": "{icon} {temperatureC}°C",
+      "format-icons": ["", "", ""]
+    },
+    "battery": {
+      "states": {
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "{icon}  {capacity}%",
+      "format-full": "{icon}  {capacity}%",
+      "format-charging": "  {capacity}%",
+      "format-plugged": "  {capacity}%",
+      "format-alt": "{time} {icon}",
+      "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+      "format-wifi": "  {signalStrength}%",
+      "format-ethernet": "{cidr} ",
+      "tooltip-format": "{ifname} via {gwaddr} ",
+      "format-linked": "{ifname} (No IP) ",
+      "format-disconnected": " ⚠ ",
+      "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "hyprland/language": {
+    "format": "{short}",
+    "rewrite": {
+        "Russian": "RU",
+        "English (US)": "ENG"
+    }
+    },
+    "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-bluetooth": "{volume}% {icon} {format_source}",
+      "format-bluetooth-muted": " {icon} {format_source}",
+      "format-muted": " {format_source}",
+      "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", ""]
+      },
+      "on-click": "pavucontrol"
+    },
+    "custom/exit": {
+        "format": "",
+        "on-click": "wlogout",
+        "tooltip": false
+    }
+}
