@@ -11,4 +11,4 @@
 ```bash
 git clone https://github.com/ваш-username/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-./deploy.sh
+sudo ./deploy.sh
