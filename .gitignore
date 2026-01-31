@@ -1,0 +1,28 @@
+# Игнорируем временные файлы
+*.log
+*.swp
+*.tmp
+*.cache
+
+# Игнорируем бинарные файлы
+*.jpg
+*.png
+*.ico
+
+# Игнорируем системные файлы
+.directory
+*.desktop
+
+# Игнорируем секреты и пароли
+*password*
+*secret*
+*key*
+*credential*
+
+# Игнорируем backup файлы
+*~
+*.backup
+*.old
+
+# Waybar cache
+waybar/style.css

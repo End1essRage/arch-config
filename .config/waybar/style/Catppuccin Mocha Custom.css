@@ -1,0 +1,55 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Fira Code", "FontAwesome", monospace;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(30, 30, 46, 0.9);
+    color: #cdd6f4;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    color: #a6adc8;
+    background: transparent;
+}
+
+#workspaces button.active {
+    color: #cba6f7;
+    background: rgba(203, 166, 247, 0.1);
+}
+
+#workspaces button:hover {
+    background: rgba(166, 173, 200, 0.1);
+}
+
+#clock,
+#pulseaudio,
+#network,
+#battery,
+#tray,
+#custom-launcher {
+    padding: 0 12px;
+    color: #cdd6f4;
+}
+
+#battery.warning {
+    color: #f9e2af;
+}
+
+#battery.critical {
+    color: #f38ba8;
+}
+
+#pulseaudio.muted {
+    color: #a6adc8;
+}
+
+#network.disconnected {
+    color: #f38ba8;
+}
